@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Password Strength Checker</title>
+<style>
+  /* Centered box styles */
+  .centered-box {
+    width: 80%; /* Adjust the width as needed */
+    margin: 0 auto; /* Center the box horizontally */
+    padding: 20px;
+    border: 2px solid #000; /* Black border */
+    box-sizing: border-box; /* Include padding in the width */
+  }
+
+  /* Style for the result message */
+  #password-strength {
+    margin-top: 20px; /* Add space above the result message */
+  }
+
+  #password-strength strong {
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+
+<div class="centered-box">
+  <h2>Password Strength Checker</h2>
+
+  <form action="/" method="post">
+    <label for="password">Enter your password:</label>
+    <input type="password" id="password" name="password">
+    <button type="submit">Check Strength</button>
+  </form>
+
+  {% if result_message %}
+  <div id="password-strength"><strong>{{ result_message }}</strong></div>
+  {% endif %}
+</div>
+
+</body>
+</html>
